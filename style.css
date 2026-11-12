@@ -1,0 +1,232 @@
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --preto: #101317;
+    --grafite: #202830;
+    --cinza: #59636d;
+    --turquesa: #35d9e8;
+    --azul-claro: #8af6ff;
+    --branco: #f1faff;
+}
+
+/* ===== FUNDO DA PÁGINA ===== */
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(8, 11, 14, 0.70),
+            rgba(8, 11, 14, 0.80)
+        ),
+        url("./charizard.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--branco);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+
+main {
+    width: 100%;
+    max-width: 480px;
+
+    background: rgba(16, 22, 28, 0.95);
+
+    border: 1px solid rgba(53, 217, 232, 0.5);
+    border-radius: 22px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 20px rgba(53, 217, 232, 0.15),
+        0 0 50px rgba(53, 217, 232, 0.08);
+}
+
+/* ===== TÍTULO ===== */
+
+h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    color: var(--turquesa);
+
+    text-shadow:
+        0 0 8px rgba(53, 217, 232, 0.8),
+        0 0 20px rgba(53, 217, 232, 0.4);
+
+    margin-bottom: 30px;
+}
+
+/* ===== FORMULÁRIO ===== */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== CAMPO DE ENTRADA ===== */
+
+input {
+    width: 100%;
+    padding: 15px;
+
+    background: var(--preto);
+
+    border: 1px solid var(--cinza);
+    border-radius: 10px;
+
+    color: var(--branco);
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: #84919b;
+}
+
+input:focus {
+    border-color: var(--turquesa);
+
+    box-shadow: 0 0 12px rgba(53, 217, 232, 0.4);
+}
+
+/* ===== BOTÃO ===== */
+
+button {
+    padding: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #159eae,
+        #35d9e8,
+        #159eae
+    );
+
+    border: none;
+    border-radius: 10px;
+
+    color: var(--preto);
+
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 15px rgba(53, 217, 232, 0.7),
+        0 0 30px rgba(53, 217, 232, 0.3);
+}
+
+/* ===== MENSAGEM ===== */
+
+#msg {
+    margin-top: 18px;
+    color: var(--turquesa);
+}
+
+/* ===== RESULTADO ===== */
+
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+
+    background:
+        radial-gradient(circle, #253b45, #11191f);
+
+    border: 1px solid rgba(53, 217, 232, 0.3);
+    border-radius: 16px;
+}
+
+/* ===== NOME DO POKÉMON ===== */
+
+#nomePokemon {
+    color: var(--turquesa);
+
+    font-size: 24px;
+    text-transform: capitalize;
+
+    margin-bottom: 15px;
+
+    text-shadow: 0 0 10px rgba(53, 217, 232, 0.5);
+}
+
+/* ===== IMAGEM DO POKÉMON ===== */
+
+#imgPoke {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 12px rgba(53, 217, 232, 0.35));
+
+    transition: 0.4s;
+}
+
+#imgPoke:hover {
+    transform: scale(1.1);
+
+    filter: drop-shadow(0 0 20px rgba(53, 217, 232, 0.8));
+}
+
+/* ===== EXPERIÊNCIA BASE ===== */
+
+#basePoke {
+    color: #b9cbd2;
+
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    #imgPoke {
+        width: 170px;
+    }
+}
+
