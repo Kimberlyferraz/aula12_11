@@ -5,9 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./style.css">
     <title>Pokédex | Mega Charizard X</title>
 </head>
 
@@ -15,41 +13,90 @@
 
     <main>
 
-        <h1>Buscar Pokémon</h1>
+        <header>
+            <h1>POKÉDEX</h1>
+            <p class="subtitulo">Explore o universo Pokémon</p>
+        </header>
 
         <form id="formPage">
 
             <input
                 type="number"
                 id="idPoke"
-                placeholder="Digite o ID"
+                placeholder="Digite o ID do Pokémon"
                 min="1"
                 required
             >
 
-            <button type="submit">Buscar</button>
+            <button type="submit">Buscar Pokémon</button>
 
         </form>
 
         <p id="msg"></p>
 
-        <div id="resultado">
+        <section id="resultado">
 
             <h2 id="nomePokemon"></h2>
+            <p id="numeroPokemon"></p>
 
-            <img
-                src=""
-                alt="Imagem do Pokémon"
-                id="imgPoke"
-            >
+            <img src="" alt="Imagem do Pokémon" id="imgPoke">
 
-            <p id="basePoke"></p>
+            <div id="tipos"></div>
 
-        </div>
+            <p id="descricao"></p>
+
+            <button type="button" id="botaoSom" hidden>
+                Ouvir som do Pokémon
+            </button>
+
+            <audio id="somPokemon"></audio>
+
+            <section class="detalhes">
+
+                <h3>Informações básicas</h3>
+
+                <div class="info-grid">
+
+                    <div class="info-card">
+                        <span>Altura</span>
+                        <strong id="altura"></strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span>Peso</span>
+                        <strong id="peso"></strong>
+                    </div>
+
+                    <div class="info-card">
+                        <span>Experiência base</span>
+                        <strong id="basePoke"></strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="detalhes">
+                <h3>Habilidades</h3>
+                <div id="habilidades"></div>
+            </section>
+
+            <section class="detalhes">
+                <h3>Atributos de batalha</h3>
+                <div id="estatisticas"></div>
+            </section>
+
+            <section class="detalhes">
+                <h3>Golpes</h3>
+                <div id="golpes"></div>
+            </section>
+
+        </section>
 
     </main>
 
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 
 </body>
 </html>
+

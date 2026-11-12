@@ -16,16 +16,16 @@
     --branco: #f1faff;
 }
 
-/* ===== FUNDO DA PÁGINA ===== */
+/* ===== FUNDO ===== */
 
 body {
     min-height: 100vh;
     font-family: Arial, sans-serif;
 
-    background:
+    background-image:
         linear-gradient(
-            rgba(8, 11, 14, 0.70),
-            rgba(8, 11, 14, 0.80)
+            rgba(8, 11, 14, 0.45),
+            rgba(8, 11, 14, 0.60)
         ),
         url("./charizard.jpg");
 
@@ -49,7 +49,7 @@ main {
     width: 100%;
     max-width: 480px;
 
-    background: rgba(16, 22, 28, 0.95);
+    background: rgba(16, 22, 28, 0.93);
 
     border: 1px solid rgba(53, 217, 232, 0.5);
     border-radius: 22px;
@@ -63,12 +63,12 @@ main {
         0 0 50px rgba(53, 217, 232, 0.08);
 }
 
-/* ===== TÍTULO ===== */
+/* ===== CABEÇALHO ===== */
 
 h1 {
-    font-size: 28px;
+    font-size: 30px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 
     color: var(--turquesa);
 
@@ -76,7 +76,14 @@ h1 {
         0 0 8px rgba(53, 217, 232, 0.8),
         0 0 20px rgba(53, 217, 232, 0.4);
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    color: #b9cbd2;
+    margin-bottom: 25px;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 /* ===== FORMULÁRIO ===== */
@@ -86,8 +93,6 @@ form {
     flex-direction: column;
     gap: 15px;
 }
-
-/* ===== CAMPO DE ENTRADA ===== */
 
 input {
     width: 100%;
@@ -102,7 +107,6 @@ input {
     font-size: 16px;
 
     outline: none;
-
     transition: 0.3s;
 }
 
@@ -112,11 +116,10 @@ input::placeholder {
 
 input:focus {
     border-color: var(--turquesa);
-
     box-shadow: 0 0 12px rgba(53, 217, 232, 0.4);
 }
 
-/* ===== BOTÃO ===== */
+/* ===== BOTÕES ===== */
 
 button {
     padding: 15px;
@@ -133,13 +136,12 @@ button {
 
     color: var(--preto);
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
 
     cursor: pointer;
-
     transition: 0.3s;
 }
 
@@ -161,17 +163,18 @@ button:hover {
 /* ===== RESULTADO ===== */
 
 #resultado {
+    display: none;
+
     margin-top: 30px;
     padding: 20px;
 
-    background:
-        radial-gradient(circle, #253b45, #11191f);
+    background: radial-gradient(circle, #253b45, #11191f);
 
     border: 1px solid rgba(53, 217, 232, 0.3);
     border-radius: 16px;
 }
 
-/* ===== NOME DO POKÉMON ===== */
+/* ===== NOME ===== */
 
 #nomePokemon {
     color: var(--turquesa);
@@ -179,12 +182,18 @@ button:hover {
     font-size: 24px;
     text-transform: capitalize;
 
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     text-shadow: 0 0 10px rgba(53, 217, 232, 0.5);
 }
 
-/* ===== IMAGEM DO POKÉMON ===== */
+#numeroPokemon {
+    color: var(--azul-claro);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* ===== IMAGEM ===== */
 
 #imgPoke {
     width: 200px;
@@ -204,18 +213,154 @@ button:hover {
     filter: drop-shadow(0 0 20px rgba(53, 217, 232, 0.8));
 }
 
-/* ===== EXPERIÊNCIA BASE ===== */
+/* ===== TIPOS ===== */
 
-#basePoke {
-    color: #b9cbd2;
+#tipos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
 
-    font-size: 15px;
-    margin-top: 15px;
+.tipo {
+    padding: 7px 15px;
+    border-radius: 20px;
+    background: #159eae;
+    color: #101317;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ===== DESCRIÇÃO ===== */
+
+#descricao {
+    color: #c8dce2;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+/* ===== DETALHES ===== */
+
+.detalhes {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(53, 217, 232, 0.25);
+    text-align: left;
+}
+
+.detalhes h3 {
+    color: var(--turquesa);
+    font-size: 16px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* ===== INFORMAÇÕES BÁSICAS ===== */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.info-card {
+    background: var(--grafite);
+    border: 1px solid rgba(53, 217, 232, 0.2);
+    border-radius: 10px;
+    padding: 12px 5px;
+    text-align: center;
+}
+
+.info-card span {
+    display: block;
+    color: #9aadb5;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.info-card strong {
+    color: var(--azul-claro);
+    font-size: 14px;
+}
+
+/* ===== HABILIDADES E GOLPES ===== */
+
+.lista-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.item-detalhe {
+    background: var(--grafite);
+    border: 1px solid rgba(53, 217, 232, 0.25);
+    color: #eafaff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+/* ===== ESTATÍSTICAS ===== */
+
+.stat-item {
+    margin-bottom: 15px;
+}
+
+.stat-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    color: #d8f5fa;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.stat-barra {
+    height: 9px;
+    background: #303b44;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-progresso {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #159eae,
+        #35d9e8,
+        #8af6ff
+    );
+    border-radius: 10px;
+}
+
+/* ===== SOM ===== */
+
+#botaoSom {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: var(--grafite);
+    border: 1px solid var(--turquesa);
+    color: var(--azul-claro);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#botaoSom:hover {
+    background: #159eae;
+    color: var(--preto);
 }
 
 /* ===== RESPONSIVIDADE ===== */
 
 @media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
 
     main {
         padding: 30px 20px;
@@ -228,5 +373,8 @@ button:hover {
     #imgPoke {
         width: 170px;
     }
-}
 
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
